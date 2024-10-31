@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id : equipe
+          uri: http://localhost:8881
+          predicates:
+            - Path=/api/v1/equip/**
+        - id : joueur
+          uri: http://localhost:8882
+          predicates:
+            - Path=/api/v1/joueur/**
+rsa:
+  public-key: classpath:Keys/publicKey.pem
